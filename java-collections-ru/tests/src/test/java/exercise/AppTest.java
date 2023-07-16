@@ -19,7 +19,7 @@ class AppTest {
         }
 
         @Test
-        void testTake1() {
+        void testTake2() {
             List<Integer> list = new ArrayList<>(Arrays.asList(7, 3, 10));
             List<Integer> result = App.take(list, 8);
             assertThat(result).isEqualTo(Arrays.asList(7, 3, 10));
