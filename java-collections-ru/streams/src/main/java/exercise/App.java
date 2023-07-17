@@ -6,7 +6,7 @@ import java.util.List;
 public class App {
     public static int getCountOfFreeEmails(List<String> emails) {
         return (int) emails.stream()
-                .filter(e -> e.contains("gmail.com") || e.contains("yandex.ru") || e.contains("hotmail.com"))
+                .filter(e -> e.contains("@gmail.com") || e.contains("@yandex.ru") || e.contains("@hotmail.com"))
                 .count();
     }
 }
