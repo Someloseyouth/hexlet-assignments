@@ -2,11 +2,13 @@ package exercise;
 
 import java.util.stream.Collectors;
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 // BEGIN
 class App {
     public static String getForwardedVariables(String config) {
-        String[] arr = content.split("\n");
+        String[] arr = config.split("\n");
         List<String> ans = Arrays.stream(arr)
                 .filter(x -> x.startsWith("environment="))
                 .filter((x -> x.contains("X_FORWARDED_")))
