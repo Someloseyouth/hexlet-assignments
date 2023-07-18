@@ -1,6 +1,7 @@
 package exercise;
 
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 // BEGIN
@@ -14,16 +15,16 @@ class AppTest {
                 {"*", "*", "*", "*"},
         };
         String[][] enlargedImage = App.enlargeArrayImage(image);
-        assertThat(Arrays.deepToString(enlargedImage)).isEqualTo("[" +
-                "[*, *, *, *, *, *, *, *], " +
-                "[*, *, *, *, *, *, *, *], " +
-                "[*, *,  ,  ,  ,  , *, *], " +
-                "[*, *,  ,  ,  ,  , *, *], " +
-                "[*, *,  ,  ,  ,  , *, *], " +
-                "[*, *,  ,  ,  ,  , *, *], " +
-                "[*, *, *, *, *, *, *, *], " +
-                "[*, *, *, *, *, *, *, *]"   +
-                "]");
+        assertThat(Arrays.deepToString(enlargedImage)).isEqualTo("["
+                + "[*, *, *, *, *, *, *, *], "
+                + "[*, *, *, *, *, *, *, *], "
+                + "[*, *,  ,  ,  ,  , *, *], "
+                + "[*, *,  ,  ,  ,  , *, *], "
+                + "[*, *,  ,  ,  ,  , *, *], "
+                + "[*, *,  ,  ,  ,  , *, *], "
+                + "[*, *, *, *, *, *, *, *], "
+                + "[*, *, *, *, *, *, *, *]"
+                + "]");
     }
 }
 // END
