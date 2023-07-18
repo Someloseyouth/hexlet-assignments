@@ -1,9 +1,8 @@
 package exercise;
 
-import java.util.stream.Collectors;
+
 import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.HashMap;
+
 
 // BEGIN
 class App {
