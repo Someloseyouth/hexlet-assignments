@@ -6,29 +6,26 @@ import java.util.Set;
 
 // BEGIN
 public class App {
-    public static LinkedHashMap<String, String> genDiff(Map<String, Object> dict1, Map<String, Object> dict2) {
-        LinkedHashMap<String, String> result = new LinkedHashMap<>();
-        Set<String> keys1 = dict1.keySet();
-        Set<String> keys2 = dict2.keySet();
+    public static Map<String, String> genDiff(Map<String, Object> firstDictionary, Map<String, Object> secondDictionary) {
+        Map<String, String> diff = new LinkedHashMap<>();
 
-        for (String key : keys1) {
-            Object value1 = dict1.get(key);
-            Object value2 = dict2.get(key);
-
-            if (value1 == null && value2 != null) {
-                result.put(key, "added");
-            } else if (value2 == null && value1 != null) {
-                result.put(key, "deleted");
+        for (String key : firstDictionary.keySet()) {
+            if (secondDictionary.containsKey(key) && firstDictionary.get(key) == secondDictionary.get(key)) {
+                diff.put(key, "unchanged");
+            } else if (secondDictionary.containsKey(key)) {
+                diff.put(key, "changed");
             } else {
-                if (value1.equals(value2)) {
-                    result.put(key, "unchanged");
-                } else {
-                    result.put(key, "changed");
-                }
+                diff.put(key, "deleted");
             }
         }
 
-        return result;
+        for (String key : secondDictionary.keySet()) {
+            if (!diff.containsKey(key)) {
+                diff.put(key, "added");
+            }
+        }
+
+        return diff;
     }
 }
 //END
